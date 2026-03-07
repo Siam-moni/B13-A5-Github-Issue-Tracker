@@ -12,5 +12,42 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body></body>
+  <body class="bg-gray-50 font-sans">
+    <div
+      id="login-page"
+      class="fixed max-h-screen inset-0 flex items-center justify-center bg-white"
+    >
+      <div
+        class="w-full max-w-md p-5 bg-white border rounded-lg shadow-xl text-center"
+      >
+        <img
+          src="./assets/github-logo.png"
+          alt="Logo"
+          class="w-16 mx-auto mb-4"
+        />
+        <h1 class="text-2xl font-bold">GitHub Issues Tracker</h1>
+        <p class="text-gray-400 mb-1">Sign in to manage your issues</p>
+        <h2 class="text-left mb-2 font-bold">Username</h2>
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter Username"
+          class="w-full p-2 border rounded mb-1 outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        <h2 class="text-left mb-2 font-bold">Password</h2>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter Password"
+          class="w-full p-2 border rounded mb-3 outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        <button
+          id="login-btn"
+          class="w-full btn btn-primary rounded p-3 font-bold hover:bg-gray-800 transition"
+        >
+          Sign In
+        </button>
+      </div>
+    </div>
+  </body>
 </html>
