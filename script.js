@@ -13,3 +13,18 @@ function login() {
     alert("Wrong credentials");
   }
 }
+// LOAD ISSUES
+async function loadIssues() {
+  const loader = document.getElementById("loader");
+
+  loader.classList.remove("hidden");
+
+  const res = await fetch(API);
+  const data = await res.json();
+
+  issuesData = data.data;
+
+  displayIssues(issuesData);
+
+  loader.classList.add("hidden");
+}
