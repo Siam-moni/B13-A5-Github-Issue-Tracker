@@ -159,3 +159,28 @@ async function searchIssue() {
 
   displayIssues(data.data);
 }
+// OPEN MODAL
+async function openModal(id) {
+  const res = await fetch(
+    `https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`,
+  );
+
+  const data = await res.json();
+
+  const issue = data.data;
+
+  document.getElementById("modalTitle").innerText = issue.title;
+  document.getElementById("modalDescription").innerText = issue.description;
+  document.getElementById("modalStatus").innerText = issue.status;
+  document.getElementById("modalAuthor").innerText = issue.author;
+  document.getElementById("modalPriority").innerText = issue.priority;
+  document.getElementById("modalLabel").innerText = issue.labels;
+  document.getElementById("modalCreated").innerText = issue.createdAt;
+
+  document.getElementById("issueModal").showModal();
+}
+
+// LOAD WHEN PAGE OPEN
+if (document.getElementById("issuesContainer")) {
+  loadIssues();
+}
