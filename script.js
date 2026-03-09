@@ -138,3 +138,12 @@ function displayIssues(issues) {
     container.appendChild(card);
   });
 }
+// FILTER ISSUES
+function filterIssues(status) {
+  if (status === "all") {
+    displayIssues(issuesData);
+  } else {
+    const filtered = issuesData.filter((i) => i.status === status);
+    displayIssues(filtered);
+  }
+}
